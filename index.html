@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SASTRANET Organizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>🌐 SASTRANET Organizer</h1>
+    </div>
+    <div class="header-actions">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search tasks...">
+      </div>
+    </div>
+  </header>
+
+  <!-- Common Team Collaborators Bar -->
+  <section class="collaborators-section">
+    <div class="collab-header">
+      <strong>👥 Team Collaborators:</strong>
+      <div id="collab-list" class="collab-list">
+        <span class="collab-chip">Alex</span>
+        <span class="collab-chip">Sam</span>
+        <span class="collab-chip">Taylor</span>
+      </div>
+    </div>
+    <div class="add-collab-form">
+      <input type="text" id="new-collab-input" placeholder="New collaborator name...">
+      <button type="button" id="add-collab-btn">Add Member</button>
+    </div>
+  </section>
+
+  <!-- Feature: My Tasks Section -->
+  <section class="my-tasks-section">
+    <div class="my-tasks-header">
+      <div class="my-tasks-title-wrap">
+        <h3>📌 My Tasks for:</h3>
+        <select id="my-tasks-user-select">
+          <option value="Alex">Alex</option>
+          <option value="Sam">Sam</option>
+          <option value="Taylor">Taylor</option>
+        </select>
+      </div>
+      <span class="my-tasks-count" id="my-tasks-count">0 tasks</span>
+    </div>
+    <div id="my-tasks-container" class="my-tasks-container">
+      <!-- Populated dynamically by script.js -->
+    </div>
+  </section>
+
+  <!-- Feature: Team Poll & Collaborator Voting with Progress Bar -->
+  <section class="poll-section">
+    <div class="poll-header">
+      <h3>🗳️ Team Poll & Collaborator Voting</h3>
+      <button type="button" id="toggle-create-poll-btn" class="secondary-btn">+ New Poll</button>
+    </div>
+
+    <!-- Create Poll Form -->
+    <form id="create-poll-form" class="create-poll-form hidden">
+      <input type="text" id="poll-question-input" placeholder="Enter poll question..." required>
+      <input type="text" id="poll-options-input" placeholder="Options separated by commas (e.g., Cloud Gateway, Problem Bank, UI Portal)" required>
+      <button type="submit" id="create-poll-submit-btn">Publish Poll</button>
+    </form>
+
+    <!-- Active Poll Display -->
+    <div class="active-poll-card">
+      <h4 id="poll-display-question">What should be our top priority for SASTRANET Hackathon?</h4>
+
+      <div class="poll-voting-controls">
+        <label for="poll-voter-select">Voting as:</label>
+        <select id="poll-voter-select">
+          <option value="Alex">Alex</option>
+          <option value="Sam">Sam</option>
+          <option value="Taylor">Taylor</option>
+        </select>
+      </div>
+
+      <!-- Poll Options with Live Progress Bars -->
+      <div id="poll-options-list" class="poll-options-list">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+
+      <button type="button" id="cast-vote-btn">Cast Vote</button>
+      <div id="poll-message" class="poll-message"></div>
+    </div>
+  </section>
+
+  <main>
+    <!-- Add Task Form -->
+    <section class="task-form-section">
+      <form id="task-form">
+        <input type="text" id="task-title" placeholder="Enter task title...">
+        
+        <select id="task-priority">
+          <option value="low">Low Priority</option>
+          <option value="medium" selected>Medium Priority</option>
+          <option value="high">High Priority</option>
+        </select>
+
+        <select id="task-column">
+          <option value="todo-list">To Do</option>
+          <option value="inprogress-list">In Progress</option>
+          <option value="done-list">Done</option>
+        </select>
+
+        <!-- Collaborator Assignee for new tasks -->
+        <select id="task-assignee">
+          <option value="Unassigned">Assignee: Unassigned</option>
+          <option value="Alex">Assignee: Alex</option>
+          <option value="Sam">Assignee: Sam</option>
+          <option value="Taylor">Assignee: Taylor</option>
+        </select>
+
+        <button type="submit" id="add-task-btn">Add Task</button>
+      </form>
+    </section>
+
+    <!-- Kanban Board Columns -->
+    <section class="board">
+      
+      <!-- To Do Column -->
+      <div class="column" id="todo-column">
+        <div class="column-header">
+          <h2>To Do</h2>
+          <span class="task-count" id="todo-count">0</span>
+        </div>
+        <div class="task-list" id="todo-list">
+          
+          <!-- Sample Task Card 1 -->
+          <div class="task-card" draggable="true" data-id="1">
+            <div class="card-header">
+              <span class="badge badge-high">High</span>
+              <button class="delete-btn" title="Delete Task"><span class="delete-text">Delete</span></button>
+            </div>
+            <p class="task-text">Configure SASTRANET Wi-Fi authentication gateway</p>
+            <div class="card-collab-row">
+              <span class="collab-tag">👤 Alex</span>
+              <select class="card-assignee-select">
+                <option value="Alex" selected>Alex</option>
+                <option value="Sam">Sam</option>
+                <option value="Taylor">Taylor</option>
+                <option value="Unassigned">Unassigned</option>
+              </select>
+            </div>
+            <div class="card-actions">
+              <button class="move-btn move-right">Move Next ▶</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- In Progress Column -->
+      <div class="column" id="inprogress-column">
+        <div class="column-header">
+          <h2>In Progress</h2>
+          <span class="task-count" id="inprogress-count">0</span>
+        </div>
+        <div class="task-list" id="inprogress-list">
+          
+          <!-- Sample Task Card 2 -->
+          <div class="task-card" draggable="true" data-id="2">
+            <div class="card-header">
+              <span class="badge badge-medium">Medium</span>
+              <button class="delete-btn" title="Delete Task"><span class="delete-text">Delete</span></button>
+            </div>
+            <p class="task-text">Design database schema for student event registration</p>
+            <div class="card-collab-row">
+              <span class="collab-tag">👤 Sam</span>
+              <select class="card-assignee-select">
+                <option value="Alex">Alex</option>
+                <option value="Sam" selected>Sam</option>
+                <option value="Taylor">Taylor</option>
+                <option value="Unassigned">Unassigned</option>
+              </select>
+            </div>
+            <div class="card-actions">
+              <button class="move-btn move-left">◀ Back</button>
+              <button class="move-btn move-right">Move Next ▶</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Done Column -->
+      <div class="column" id="done-column">
+        <div class="column-header">
+          <h2>Done</h2>
+          <span class="task-count" id="done-count">0</span>
+        </div>
+        <div class="task-list" id="done-list">
+          
+          <!-- Sample Task Card 3 -->
+          <div class="task-card" draggable="true" data-id="3">
+            <div class="card-header">
+              <span class="badge badge-low">Low</span>
+              <button class="delete-btn" title="Delete Task"><span class="delete-text">Delete</span></button>
+            </div>
+            <p class="task-text">Setup SASTRANET organizer repository and README</p>
+            <div class="card-collab-row">
+              <span class="collab-tag">👤 Taylor</span>
+              <select class="card-assignee-select">
+                <option value="Alex">Alex</option>
+                <option value="Sam">Sam</option>
+                <option value="Taylor" selected>Taylor</option>
+                <option value="Unassigned">Unassigned</option>
+              </select>
+            </div>
+            <div class="card-actions">
+              <button class="move-btn move-left">◀ Back</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

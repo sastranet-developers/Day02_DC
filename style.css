@@ -1,0 +1,538 @@
+/* Simple Minimal CSS for SASTRANET Organizer */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f5f7;
+  color: #333;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #ddd;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+header h1 {
+  font-size: 22px;
+  color: #1a237e;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-box input {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 220px;
+}
+
+/* Feature: Global Team Collaborators Bar */
+.collaborators-section {
+  background: #fff;
+  padding: 12px 15px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.collab-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.collab-list {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.collab-chip {
+  background-color: #e8eaf6;
+  color: #283593;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  border: 1px solid #c5cae9;
+}
+
+.add-collab-form {
+  display: flex;
+  gap: 8px;
+}
+
+.add-collab-form input {
+  padding: 6px 10px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-collab-form button {
+  padding: 6px 12px;
+  font-size: 13px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-collab-form button:hover {
+  background-color: #1b5e20;
+}
+
+/* Feature: My Tasks Section */
+.my-tasks-section {
+  background: #fff;
+  padding: 12px 15px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.my-tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+
+.my-tasks-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.my-tasks-title-wrap h3 {
+  font-size: 15px;
+  color: #333;
+}
+
+#my-tasks-user-select {
+  font-size: 13px;
+  padding: 3px 6px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.my-tasks-count {
+  font-size: 12px;
+  background: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.my-tasks-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.my-task-item {
+  background: #fdfdfd;
+  border: 1px solid #dcdcdc;
+  border-left: 4px solid #1a237e;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.my-task-status {
+  font-size: 11px;
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #666;
+}
+
+.empty-msg {
+  font-size: 13px;
+  color: #888;
+  font-style: italic;
+}
+
+/* Feature: Poll & Voting Section */
+.poll-section {
+  background: #fff;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.poll-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.poll-header h3 {
+  font-size: 16px;
+  color: #1a237e;
+}
+
+.secondary-btn {
+  background: #e8eaf6;
+  color: #1a237e;
+  border: 1px solid #c5cae9;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.secondary-btn:hover {
+  background: #c5cae9;
+}
+
+.create-poll-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 15px;
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+
+.create-poll-form input {
+  padding: 7px 10px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.create-poll-form button {
+  align-self: flex-start;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.active-poll-card h4 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.poll-voting-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.poll-voting-controls select {
+  padding: 4px 8px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.poll-options-list {
+  margin-bottom: 12px;
+}
+
+.poll-option-row {
+  margin-bottom: 10px;
+}
+
+.poll-option-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  cursor: pointer;
+  margin-bottom: 4px;
+}
+
+.poll-option-label input {
+  margin-right: 6px;
+}
+
+.poll-vote-meta {
+  font-size: 12px;
+  color: #555;
+  font-weight: bold;
+}
+
+.poll-progress-track {
+  background-color: #e0e0e0;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.poll-progress-fill {
+  background-color: #1a237e;
+  height: 100%;
+  width: 0%;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+#cast-vote-btn {
+  background-color: #1a237e;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#cast-vote-btn:hover {
+  background-color: #0d1642;
+}
+
+.poll-message {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Task Form */
+.task-form-section {
+  background: #fff;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  margin-bottom: 25px;
+}
+
+#task-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#task-form input,
+#task-form select,
+#task-form button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#task-form input {
+  flex-grow: 1;
+}
+
+#add-task-btn {
+  background-color: #1a237e;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#add-task-btn:hover {
+  background-color: #0d1642;
+}
+
+/* Kanban Board Layout */
+.board {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.column {
+  background-color: #ebecf0;
+  flex: 1;
+  min-width: 260px;
+  border-radius: 6px;
+  padding: 15px;
+  border: 1px solid #d0d2d6;
+}
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.column-header h2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.task-count {
+  background-color: #d1d5db;
+  color: #333;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* BUG: Missing min-height on .task-list causes empty columns to shrink to 0px height, making drag-and-drop drops impossible */
+.task-list {
+  /* min-height: 100px; */
+}
+
+/* Task Card */
+.task-card {
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+  cursor: grab;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* BUG: Accidentally setting opacity to 0 and pointer-events none hides the element completely when dragging */
+.task-card.dragging {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.task-text {
+  font-size: 14px;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+/* Card Collaborator Row */
+.card-collab-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6px 0 10px 0;
+  font-size: 12px;
+}
+
+.collab-tag {
+  background-color: #f1f3f4;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #555;
+  font-weight: bold;
+}
+
+.card-assignee-select {
+  font-size: 11px;
+  padding: 2px 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+/* Badges */
+.badge {
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.badge-low { background-color: #e3f2fd; color: #1565c0; }
+.badge-medium { background-color: #fff3e0; color: #e65100; }
+.badge-high { background-color: #ffebee; color: #c62828; }
+
+/* Delete Option Button inside Cards */
+.delete-btn {
+  background-color: #ffebee;
+  border: 1px solid #ffcdd2;
+  color: #c62828;
+  cursor: pointer;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.delete-btn:hover {
+  background-color: #ffcdd2;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.move-btn {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.move-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.task-card.hidden {
+  display: none !important;
+}
+
+.create-poll-form.hidden {
+  display: none;
+}
